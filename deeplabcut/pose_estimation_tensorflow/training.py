@@ -157,13 +157,13 @@ def train_network(
     importlib.reload(logging)
     logging.shutdown()
 
-    from deeplabcut.utils import auxiliaryfunctions
+    from deeplabcut.utils.auxiliaryfunctions import read_config
 
     tf.compat.v1.reset_default_graph()
     start_path = os.getcwd()
 
     # Read file path for pose_config file. >> pass it on
-    cfg = auxiliaryfunctions.read_config(config)
+    cfg = read_config(config)
     modelfoldername = auxiliaryfunctions.get_model_folder(
         cfg["TrainingFraction"][trainingsetindex], shuffle, cfg, modelprefix=modelprefix
     )
