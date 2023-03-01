@@ -163,7 +163,7 @@ def train_network(
     start_path = os.getcwd()
 
     # Read file path for pose_config file. >> pass it on
-    cfg = read_config(config)
+    cfg = deeplabcut.utils.auxiliaryfunctions.read_config(config)
     modelfoldername = auxiliaryfunctions.get_model_folder(
         cfg["TrainingFraction"][trainingsetindex], shuffle, cfg, modelprefix=modelprefix
     )
